@@ -1,0 +1,41 @@
+textarea {
+  resize: none;
+}
+
+main {
+  margin: 100px auto;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  background-color: whitesmoke;
+  transition: all 0.3s;
+}
+
+main section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main section form mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.form {
+  z-index: 1;
+}
+
+.swal2-container {
+  z-index: 9999;
+}
+
+button {
+    border: none;
+    width: 20%;
+    height: 40%;
+    border-radius: 5px;
+    background-color: var(--color-primary-3);
+    color: white;
+}

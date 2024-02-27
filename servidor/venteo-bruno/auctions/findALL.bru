@@ -1,0 +1,18 @@
+meta {
+  name: findALL
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8080/api/v1/products
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "name": "yogures de proteinas",
+      "price": 60
+    }
+}

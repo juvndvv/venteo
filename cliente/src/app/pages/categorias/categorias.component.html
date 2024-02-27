@@ -1,0 +1,20 @@
+<main>
+  @defer () {
+  <div class="container">
+    @for (categoria of categorias; track $index) {
+    <a
+      [routerLink]="'/category/' + categoria.categoryId"
+      routerLinkActive="active"
+      class="categoria"
+    >
+      <div class="">
+        <div class="img-container">
+          <img [src]="categoria.imageUrl" />
+        </div>
+        <p>{{ categoria.name }}</p>
+      </div>
+    </a>
+    }
+  </div>
+  }
+</main>

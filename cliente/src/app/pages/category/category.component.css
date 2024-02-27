@@ -1,0 +1,41 @@
+a {
+  color: var(--color-primary-2);
+  font-weight: 500;
+}
+
+main {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+main > div:last-of-type {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.auctions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(400px, 1fr));
+  gap: 16px;
+}
+
+@media screen and (max-width: 850px) {
+  .auctions {
+    grid-template-columns: 1fr;
+  }
+}
+
+a{
+  width: 135px;
+  font-weight: 700;
+  color: #1465BB;
+  display: flex;
+  font-size: 25px;
+  align-items: center;
+}
+
+main{
+  animation: _ngcontent-ng-c223549184_slide 0.5s ease-in-out;
+}
+

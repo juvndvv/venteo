@@ -1,0 +1,9 @@
+@defer () {
+    @if (user) {
+        <app-header [links]="links" [user]="user"></app-header>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    } @else {
+        <app-login></app-login>
+    }
+}

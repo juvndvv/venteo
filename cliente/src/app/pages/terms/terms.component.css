@@ -1,0 +1,50 @@
+#terms {
+  padding: 64px 32px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 64px;
+
+  & li {
+    margin: 16px 0;
+  }
+
+  & ul > li {
+    list-style-type: none;
+  }
+
+  & ul > li::before {
+    content: "·";
+    font-weight: 800;
+  }
+
+  & span {
+    font-weight: bold;
+  }
+}
+p {
+  font-size: 1rem;
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small,
+li {
+  line-height: 1.6;
+}
+main section > *:not(:first-child) {
+  margin: 16px 0 0 0;
+}
+main section > *:not(:first-child) {
+  margin: 16px 0 0 0;
+}
+ol,
+ul {
+  text-align: justify;
+  list-style-position: inside;
+}

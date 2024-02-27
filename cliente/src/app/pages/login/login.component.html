@@ -1,0 +1,84 @@
+<header><h1>Venteo</h1></header>
+<div class="background"></div>
+<main>
+  @if (!isLoginValid) {
+  <mat-tab-group>
+    <mat-tab label="Iniciar sesión">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre de usuario</mat-label>
+          <input matInput formControlName="username" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input type="password" matInput formControlName="password" />
+          @if (hasLoginError) {
+          <mat-hint>{{ getLoginErrorMessage() }}</mat-hint>
+          }
+        </mat-form-field>
+        <button mat-raised-button color="primary">Iniciar sesión</button>
+      </form>
+    </mat-tab>
+    <mat-tab label="Registrarse">
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="firstName" matInput />
+            @if (registerForm.controls.firstName.invalid) {
+            <mat-error>{{ getFirstNameErrorMessage() }}</mat-error>
+            }
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Apellidos</mat-label>
+            <input formControlName="lastName" matInput />
+            @if (registerForm.controls.lastName.invalid) {
+            <mat-error>{{ getLastNameErrorMessage() }}</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre de usuario</mat-label>
+          <input matInput formControlName="userName" />
+          @if (registerForm.controls.userName.invalid) {
+          <mat-error>{{ getUserNameErrorMessage() }}</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput />
+          @if (registerForm.controls.email.invalid) {
+          <mat-error>{{ getEmailErrorMessage() }}</mat-error>
+          }
+          <mat-hint></mat-hint>
+        </mat-form-field>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input formControlName="password" matInput type="password" />
+            @if (registerForm.controls.password.invalid) {
+            <mat-error>{{ getPasswordErrorMessage() }}</mat-error>
+            }
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Repite la contraseña</mat-label>
+            <input formControlName="repeatPassword" matInput type="password" />
+            @if (registerForm.controls.repeatPassword.invalid) {
+            <mat-error>{{ getRepeatPasswordErrorMessage() }}</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <input
+          formControlName="image"
+          type="file"
+          accept="image/*"
+          (change)="onFileChange($event)"
+        />
+        <button mat-raised-button color="primary">Registrarse</button>
+      </form>
+    </mat-tab>
+  </mat-tab-group>
+  } @else {
+  <span class="loader"></span>
+  }
+</main>

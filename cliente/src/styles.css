@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Poppins:wght@400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --color-primary-1: #003785;
+  --color-primary-2: #0057b8;
+  --color-primary-3: #0070db;
+  --color-primary-4: #0088ff;
+  --color-primary-5: #339aff;
+  --color-primary-6: #66b2ff;
+  --color-primary-7: #f2faff;
+  --text-color: #3c4043;
+  --text-secondary-color: rgb(95, 99, 104);
+  --error: #d93025;
+  --success: rgb(0, 200, 83);
+  --warning: rgb(255, 143, 0);
+  --info: rgb(23, 162, 184);
+  --mobile-width: 768px;
+  --input-heigth: 40px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #ccc;
+  padding: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  min-width: 0;
+}
+
+img {
+  object-fit: cover;
+  display: block;
+  font-style: italic;
+}
+
+body {
+  font-family: Quicksand, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small,
+li {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  font-family: Poppins, sans-serif;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+input, textarea, button{
+  font-family: Poppins, sans-serif;
+}
+
+h1 {
+  font-size: 1.476rem;
+}
+
+h2 {
+  font-size: 1.383rem;
+}
+
+h3 {
+  font-size: 1.296rem;
+}
+
+h4 {
+  font-size: 1.215rem;
+}
+
+h5 {
+  font-size: 1.138rem;
+}
+
+h6 {
+  font-size: 1.067rem;
+}
+
+p {
+  font-size: 1rem;
+  text-wrap: pretty;
+}
+
+small {
+  font-size: 0.878rem;
+  color: var(--text-secondary-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.desktop--only {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile--only {
+    display: none !important;
+  }
+}

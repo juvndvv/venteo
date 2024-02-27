@@ -1,0 +1,81 @@
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+a {
+  width: 135px;
+  font-weight: 700;
+  color: #1465bb;
+  display: flex;
+  font-size: 25px;
+  align-items: center;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea,
+input {
+  max-width: 700px;
+  max-height: 100px;
+  width: 100%;
+}
+
+textarea {
+  height: 239px;
+  min-height: 40px;
+}
+
+label {
+  font-weight: 600;
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  padding: 20px;
+}
+
+form > * {
+  width: 100%;
+}
+
+main {
+  animation: _ngcontent-ng-c76272963_slide-in-top 0.5s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}

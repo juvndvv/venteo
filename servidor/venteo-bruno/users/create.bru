@@ -1,0 +1,25 @@
+meta {
+  name: create
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "firstName": "Juan Daniel",
+      "lastName": "Forner Garriga",
+      "userName": "juvndv",
+      "password": "1234",
+      "repeatPassword": "1234",
+      "email": "juanda@example.com",
+      "birthDate": "1990-01-14T23:00:00.000+00:00",
+      "imageUrl": "image1.jpg",
+      "roleId": 1
+  }
+}

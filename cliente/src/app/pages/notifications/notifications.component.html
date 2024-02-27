@@ -1,0 +1,7 @@
+<main>
+  @for (notification of notificationsU; track notification.notificationId) {
+  <app-notification [notification]="notification"></app-notification>
+  }@empty {
+  <p>Sin notificaciones</p>
+  }
+</main>

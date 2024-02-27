@@ -1,0 +1,16 @@
+<a routerLink="/auction/{{ auction.auctionId }}" routerLinkActive="active">
+  <article>
+    <img src="{{ imageUrl }}" alt="imagen subasta" />
+    <div>
+      <h3>{{ auction.auctionName }}</h3>
+      <p>{{ auction.auctionDescription }}</p>
+      <span>{{ auction.initialPrice }}</span>
+    </div>
+    <div>
+      <small>{{ userName }}</small>
+      @if (isLive) {
+      <span class="live">En directo</span>
+      }
+    </div>
+  </article></a
+>

@@ -1,0 +1,23 @@
+<main>
+  <section>
+    <h2>Contáctanos</h2>
+    <form class="form" [formGroup]="supportForm" (ngSubmit)="onSave()">
+      <mat-form-field appearance="outline">
+        <mat-label>Asunto</mat-label>
+        <input matInput formControlName="subject" />
+        <mat-error>{{ getSubjectError() }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Mensaje</mat-label>
+        <textarea
+          matInput
+          formControlName="message"
+          cols="10"
+          rows="10"
+        ></textarea>
+        <mat-error>{{ getMessageError() }}</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Enviar</button>
+    </form>
+  </section>
+</main>

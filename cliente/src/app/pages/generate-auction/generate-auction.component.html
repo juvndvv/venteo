@@ -1,0 +1,114 @@
+<main>
+  <form [formGroup]="newAuctionForm" (ngSubmit)="newAuction()">
+    <a routerLink="/" routerLinkActive="active">
+      <svg
+        width="70px"
+        height="40px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="SVGRepo_bgCarrier" stroke-width="0" />
+        <g
+          id="SVGRepo_tracerCarrier"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M6 12H18M6 12L11 7M6 12L11 17"
+            stroke="#1465BB"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+      </svg>
+
+      Volver
+    </a>
+    <h2>Pubica tu subasta</h2>
+
+    <div class="form-group">
+      <label for="auctionName">Nombre de la Subasta:</label>
+      <input
+        type="text"
+        id="auctionName"
+        name="auctionName"
+        formControlName="auctionName"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="auctionDescription">Descripcion de la Subasta</label>
+      <textarea
+        id="auctionDesciption"
+        name="auctionDescription"
+        formControlName="auctionDescription"
+        required
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="auctionCategory">Categoría:</label>
+      <select
+        id="auctionCategory"
+        name="auctionCategory"
+        formControlName="auctionCategory"
+      >
+        <option disabled selected>Selecciona una opción</option>
+        @defer () { @for (categoria of categorias; track $index) {
+        <option [value]="categoria.categoryId">{{ categoria.name }}</option>
+        } }
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="auctionStarts">Fecha y Hora de inicio de la subasta:</label>
+      <input
+        type="datetime-local"
+        id="auctionStarts"
+        name="auctionStarts"
+        formControlName="auctionStarts"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="auctionsEnds">Fecha y hora del fin de la subasta:</label>
+      <input
+        type="datetime-local"
+        id="auctionsEnds"
+        name="auctionsEnds"
+        formControlName="auctionsEnds"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="auctionPrice">Precio Inicial:</label>
+      <input
+        type="number"
+        id="auctionPrice"
+        name="auctionPrice"
+        formControlName="auctionPrice"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="auctionImage">Imagen:</label>
+      <input
+        formControlName="auctionImage"
+        type="file"
+        accept="image/*"
+        id="auctionImage"
+        name="auctionImage"
+        (change)="onFileChange($event)"
+        required
+      />
+    </div>
+    <button type="submit">Crear nueva Subasta</button>
+  </form>
+</main>

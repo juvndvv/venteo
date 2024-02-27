@@ -1,0 +1,17 @@
+meta {
+  name: partialUpdate
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{url}}/user/22
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "firstName": "Juanda"
+  }
+}

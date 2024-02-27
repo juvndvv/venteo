@@ -1,0 +1,74 @@
+<main>
+  <mat-tab-group>
+    <mat-tab label="Ingresar">
+      <form [formGroup]="userPromotionForm" (ngSubmit)="onIngreso()">
+        <mat-form-field appearance="outline">
+          <mat-label>Codigo promocional</mat-label>
+          <input matInput formControlName="codigo" />
+        </mat-form-field>
+        <button mat-raised-button>Aceptar</button>
+      </form>
+
+      <form action="" class="dinero--card">
+        <p>Selecciona un método de ingreso:</p>
+        <label>
+          <span class="hidden">Paypal</span>
+          <input id="paypal" type="radio" name="metodo" value="paypal" />
+          <img src="./assets/paypal.png" alt="paypal" />
+        </label>
+        <label>
+          <span class="hidden">Visa</span>
+          <input id="visa" type="radio" name="metodo" value="visa" />
+          <img src="./assets/visa.webp" alt="" />
+        </label>
+        <label>
+          <span class="hidden">Mastercard</span>
+          <input
+            id="mastercard"
+            type="radio"
+            name="metodo"
+            value="mastercard"
+          />
+          <img src="./assets/mastercard.png" alt="mastercard" />
+        </label>
+        <button>Ingresar</button>
+      </form>
+    </mat-tab>
+
+    <mat-tab label="Retirar">
+      <main class="main--fit">
+        <form [formGroup]="retirarForm" (ngSubmit)="onRetirada()">
+          <mat-form-field appearance="outline">
+            <mat-label>Cantidad a retirar</mat-label>
+            <input matInput formControlName="amount" />
+          </mat-form-field>
+          <button mat-raised-button>Retirar</button>
+          <small class="error">{{ lastBidMessage }}</small>
+        </form>
+
+        <form class="dinero--card">
+          <p>Selecciona un método de retirada:</p>
+          <label>
+            <span class="hidden">Paypal</span>
+            <input id="paypal" type="radio" name="metodo" value="paypal" />
+            <img src="./assets/paypal.png" alt="paypal" />
+          </label>
+          <label>
+            <span class="hidden">Visa</span>
+            <input id="visa" type="radio" name="metodo" value="visa" />
+            <img src="./assets/visa.webp" alt="" />
+          </label>
+          <label>
+            <span class="hidden">Mastercard</span>
+            <input
+              id="mastercard"
+              type="radio"
+              name="metodo"
+              value="mastercard"
+            />
+            <img src="./assets/mastercard.png" alt="mastercard" />
+          </label>
+        </form></main
+    ></mat-tab>
+  </mat-tab-group>
+</main>

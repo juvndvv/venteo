@@ -1,0 +1,59 @@
+<main>
+  <section class="info">
+    <h1>{{ auction.auctionName }}</h1>
+    <small>{{ auction.auctionDescription }}</small>
+    <img [src]="auction.imageUrl" [alt]="auction.auctionName" />
+  </section>
+  <section class="auction">
+    <p class="time">{{ time }}</p>
+    <div class="state">
+      <small class="current-bid"
+        >Puja actual @if (bids.length > 0) {
+        <span>{{ lastBidAmount }} €</span>
+        } @else {
+        <span>{{ auction.initialPrice }} €</span>
+        }
+      </small>
+      <div class="expert">
+        <div>
+          <img [src]="expert.imageUrl" [alt]="expert.userName" />
+        </div>
+        <div>
+          <p class="start-price">
+            Precio inicial <span>{{ auction.initialPrice }} €</span>
+          </p>
+          <p>{{ expert.userName }}</p>
+        </div>
+      </div>
+      <div class="controls">
+        <div>
+          <button (click)="sendBid(5)">+5 €</button>
+          <button (click)="sendBid(10)">+10 €</button>
+          <button (click)="sendBid(15)">+15 €</button>
+        </div>
+        <form (ngSubmit)="onSubmit()" [formGroup]="bid">
+          <input
+            type="text"
+            [placeholder]="'Dispones de ' + user.money + ' €'"
+            formControlName="amount"
+          />
+          <button>Pujar</button>
+          <small class="error">{{ lastBidMessage }}</small>
+        </form>
+      </div>
+      <div class="bids">
+        @if (bids.length > 0) { @for (bid of bids; track $index) {
+        <div class="bid">
+          <div>
+            <img [src]="bid.imageUrl" />
+            <p>{{ bid.userName }}</p>
+          </div>
+          <p>{{ bid.amount }}</p>
+        </div>
+        } } @else {
+        <small>No hay pujas</small>
+        }
+      </div>
+    </div>
+  </section>
+</main>

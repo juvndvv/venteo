@@ -1,0 +1,18 @@
+main{
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+h1{
+    color: var(--color-primary-1);
+}
+
+h1, h2{
+    text-align: center;
+    margin-top: 16px;
+}
+
+p{
+    margin-bottom: 32px;
+}

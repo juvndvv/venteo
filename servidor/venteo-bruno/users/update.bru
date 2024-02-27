@@ -1,0 +1,23 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{url}}/user/22
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "lastName": "Forner Garriga",
+    "userName": "juvndv",
+    "password": "2",
+    "email": "juanda@example.com",
+    "birthDate": null,
+    "imageUrl": null,
+    "roleId": null
+  }
+}

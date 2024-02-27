@@ -1,0 +1,54 @@
+<main id="perfil">
+  <nav>
+    <a class="active" href="perfil.html">Perfil</a>
+    <a href="historial.html">Mis Subastas</a>
+  </nav>
+  <section>
+    <form [formGroup]="editProfile" (ngSubmit)="onEdit()">
+      <div class="contenedor-Imagen">
+        <img [src]="imageUrl" alt="imagen perfil" id="fotoperfil" />
+        <label for="archivoInput" class="texto-editar">Editar perfil</label>
+        <input type="file" (change)="onFileSelected($event)" id="archivoInput" class="archivoInput" />
+      </div>
+      <mat-form-field>
+        <mat-label>Nombre de usuario</mat-label>
+        <input
+          matInput
+          formControlName="userName"
+          [defaultValue]="user.userName"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" [defaultValue]="user.email" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input
+          matInput
+          formControlName="firstName"
+          [defaultValue]="user.firstName"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Apellidos</mat-label>
+        <input
+          matInput
+          formControlName="lastName"
+          [defaultValue]="user.lastName"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          type="password"
+          [defaultValue]="user.password"
+        />
+        <mat-error>{{ getErrorMessage() }}</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary">Guardar cambios</button>
+    </form>
+  </section>
+</main>

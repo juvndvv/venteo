@@ -1,0 +1,56 @@
+main {
+  max-width: 1570px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+section {
+  display: block;
+}
+
+section:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+h2 {
+  margin-bottom: 16px;
+}
+
+main > section:first-child > h2 {
+  font-size: 2rem;
+}
+
+main section > div {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* para firefox */
+}
+main section > div > *:not(:last-child) {
+  margin-right: 8px;
+  height: 270px;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+main > * {
+  animation: slide 0.5s ease-in-out;
+}
+
+a {
+  color: #1465bb;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+  z-index: 1000;
+}

@@ -1,0 +1,52 @@
+<header>
+  <app-icon id="hamburguer" type="hamburguer" (click)="toggleNav()" />
+  <div id="profile--overview">
+    <span>{{ userSignal.user().money }} €</span>
+    <img (click)="toggleDropdown()" [src]="imageUrl" alt="perfil" />
+    <div id="dropdown" class="hidden slide-in-top">
+      <a
+        (click)="toggleDropdown()"
+        routerLink="/profile"
+        routerLinkActive="active"
+        >Perfil</a
+      >
+      <a
+        (click)="toggleDropdown()"
+        routerLink="/wallet"
+        routerLinkActive="active"
+        >Cartera</a
+      >
+      <a (click)="logout()" class="less">Cerrar sesión</a>
+    </div>
+  </div>
+  <nav class="hidden">
+    <div id="nav--header">
+      <app-icon id="logo" type="logo" />
+      <span (click)="toggleNav()">X</span>
+    </div>
+    <ul id="up" class="links">
+      <li class="link">
+        <a (click)="closeNav()" routerLink="/" routerLinkActive="active"
+          >Subastas</a
+        >
+      </li>
+      <li class="link">
+        <a
+          (click)="closeNav()"
+          routerLink="/notifications"
+          routerLinkActive="active"
+          >Notificaciones</a
+        >
+      </li>
+
+      <li class="link">
+        <a
+          (click)="closeNav()"
+          routerLink="/categories"
+          routerLinkActive="active"
+          >Categorias</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

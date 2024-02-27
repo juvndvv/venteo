@@ -1,0 +1,17 @@
+meta {
+  name: partialUpdate
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{url}}/auction/16
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "auctionName": "Gramito de yerba"
+  }
+}
